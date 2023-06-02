@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&family=Libre+Barcode+128+Text&family=Open+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+    --background-color: #1e2126;
+    --text-color-primary: #f8f8f2;
+    --text-color-secondary: grey;
+    --accent-color-primary: lightcoral;
+}
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  body {
+    font-size: 1.8rem;
+    line-height: 1.618;
+    max-width: 80em;
+    margin: auto;
+    color: var(--text-color-primary);
+    background-color: var(--background-color);
+    padding: 13px;
+  }
+  
+  @media (max-width: 684px) {
+    body {
+      font-size: 1.53rem;
+    }
+  }
+  @media (max-width: 382px) {
+    body {
+      font-size: 1.35rem;
+    }
+  }
+
+  
+  h1 {
+    font-size: 2.35em;
+  }
+  
+  h2 {
+    font-size: 2em;
+  }
+  
+  h3 {
+    font-size: 1.75em;
+  }
+  
+  h4 {
+    font-size: 1.5em;
+  }
+  
+  h5 {
+    font-size: 1.25em;
+  }
+  
+  h6 {
+    font-size: 1em;
+  }
+  
+  p {
+    margin-top: 0px;
+    margin-bottom: 2.5rem;
+  }
+  
+  small, sub, sup {
+    font-size: 75%;
+  }
+  
+  ul {
+    padding-left: 1.4em;
+    margin-top: 0px;
+    margin-bottom: 2.5rem;
+
+  }
+  
+  li {
+    margin-bottom: 0.4em;
+  }
+  
+  blockquote {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 1em;
+    padding-top: 0.8em;
+    padding-bottom: 0.1em;
+    padding-right: 0.8em;
+    border-left: 5px solid var(--accent-color-primary);
+    margin-bottom: 2.5rem;
+    background-color: #40363a;
+  }
+  
+  input, textarea {
+    border: 1px solid var(--text-color-primary);
+  }
+  input:focus, textarea:focus {
+    border: 1px solid var( --accent-color-primary);
+  }
+  
+  textarea {
+    width: 100%;
+  }
+  
+  .button, button, input[type=submit], input[type=reset], input[type=button] {
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: var(--accent-color-primary);
+    color: #120c0e;
+    border-radius: 1px;
+    border: 1px solid var(--accent-color-primary);
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .button[disabled], button[disabled], input[type=submit][disabled], input[type=reset][disabled], input[type=button][disabled] {
+    cursor: default;
+    opacity: 0.5;
+  }
+  .button:focus:enabled, .button:hover:enabled, button:focus:enabled, button:hover:enabled, input[type=submit]:focus:enabled, input[type=submit]:hover:enabled, input[type=reset]:focus:enabled, input[type=reset]:hover:enabled, input[type=button]:focus:enabled, input[type=button]:hover:enabled {
+    background-color: #DA4453;
+    border-color: #DA4453;
+    color: #120c0e;
+    outline: 0;
+  }
+  
+  textarea, select, input {
+    color: var(--text-color-primary);
+    font-family: Jetbrains Mono;
+    padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    margin-bottom: 10px;
+    background-color: #40363a;
+    border: 1px solid #40363a;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+  textarea:focus, select:focus, input:focus {
+    border: 1px solid var(--accent-color-primary);
+    outline: 0;
+  }
+  
+  input[type=checkbox]:focus {
+    outline: 1px dotted var(--accent-color-primary);
+  }
+  
+  .navlist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+.navbar-brand {
+    color: var(--accent-color-primary);
+    font-family: Jetbrains Mono;
+    font-size: medium;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navlist li{
+    float:right;
+}
+
+
+main > *{
+    padding: auto;
+}
+
+main h1 {
+    color: var(--text-color-secondary);
+    font-family: Jetbrains Mono;
+
+}
+
+main h2 {
+    color: var(--accent-color-primary);
+}
+
+main h2:after
+{
+    margin-bottom: 1em;
+    margin-top: 0.15em;
+    content:' ';
+    display:block;
+    border:1px solid darkgrey;
+    opacity: 50%;
+}
+
+a {
+    color: var(--accent-color-primary);
+    opacity: 70%;
+}
+
+a:hover {
+    opacity: 100%;
+}
+
+footer {
+    font-family: Jetbrains Mono;
+    width: 100%;
+    text-align: center;
+    opacity: 50%;
+}
+
+footer small:before {
+    margin-top: 1em;
+    content:' ';
+    display:block;
+    border:1px solid darkgrey;
+    opacity: 50%;
+}
+
+.newsletter h3{
+    padding: 0%;
+    margin: 0%;
+    color: lightgray;
+}
+
+.newsletter form{
+    font-family: Jetbrains Mono;
+    opacity: 80%;
+    color: lightgrey;
+}
+
+.newsletter :hover {
+    opacity: 100%;
+}
+
+#review-container {
+    padding: 1em;
+}
+
+#review-form label, button{
+    font-family: Jetbrains Mono;
+}
+
+.card {
+    color: var(--text-color-primary);
+    border: var(--accent-color-primary);
+    border-width: .25em;
+    border-style: dashed;
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+
+.card img {
+    width: 8em;
+    height: 8em;
+    float: left;
+    border-radius: 50%;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1em;
+
+
+}
+
+.card p {
+    width: 75%;
+    margin: 2em;
+}
+
+.card h3 {
+    position: relative;
+    font-family: Jetbrains Mono;
+    color: var(--accent-color-primary)
+}
+
+.card .accent {
+    font-family: Jetbrains Mono;
+    color: var(--accent-color-primary)
+}
+
+.navbar-div {
+    position: sticky;
+    top: 50px;
+    background-color: var(--background-color); /* add your desired background color here */
+    z-index: 100; /* add a higher z-index to ensure the navbar is above other elements */
+  }
+
+  .in-progress {
+    font-family: Jetbrains Mono;
+    color: var(--text-color-secondary)
+  }

@@ -1,7 +1,7 @@
-const express   = require('express');
-const storeUtil = require('./store-service');
-const items = require('./data/items.json');
-const categories = require('./data/categories.json');
+const express    = require('express');
+const storeService  = require('./store-service');
+var errorHandler = require('express-error-handler');
+
 
 
 const app = express();
@@ -18,23 +18,47 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/shop', (req, res) => {
-    const publishedItems = items.filter(item => item.published);
-    res.json(publishedItems);
+    storeService.getPublishedItems()
+      .then((items) => {
+        res.json(items);
+      })
+      .catch((error) => {
+        res.status(500).json({ message: error });
+      });
   });
   
   app.get('/items', (req, res) => {
-    res.json(items);
+    storeService.getAllItems()
+      .then((items) => {
+        res.json(items);
+      })
+      .catch((error) => {
+        res.status(500).json({ message: error });
+      });
   });
   
   app.get('/categories', (req, res) => {
-    res.json(categories);
+    storeService.getCategories()
+      .then((categories) => {
+        res.json(categories);
+      })
+      .catch((error) => {
+        res.status(500).json({ message: error });
+      });
   });
   
   app.get('*', (req, res) => {
-    res.status(404).send('Page Not Found');
+    res.sendFile(__dirname + '/views/404.html');
+
   });
   
 
-app.listen(port, () => {
-  console.log(`Express http server listening on port ${port}`);
-});
+storeService.initialize()
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
+  })
+  .catch((error) => {
+    console.error(`Error initializing store service: ${error}`);
+  });
